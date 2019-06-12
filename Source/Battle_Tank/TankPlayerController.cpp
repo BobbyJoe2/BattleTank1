@@ -51,8 +51,13 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const {
 	int32 ViewportSizeX, ViewportSizeY;
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
 
+	auto ScreenLocation = FVector2D(CrossHairXLocation * ViewportSizeX, CrossHairYLocation * ViewportSizeY);
+
+	UE_LOG(LogTemp, Warning, TEXT("ScreenLocation: %s"), *(ScreenLocation.ToString()))
 
 	//"De-project" the screen position of the crosshair to a world direction
+	
+
 	//line-trace along that look direction, and see what we hit (up to max range)
 	
 
