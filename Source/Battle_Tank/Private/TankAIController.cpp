@@ -5,6 +5,10 @@
 #include "Engine/World.h"
 #include "Tank.h"
 
+
+	
+
+
 void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -31,6 +35,8 @@ void ATankAIController::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("AIController found player: %s."), *(ControlledTank->GetName()));
 	}
 }
+
+
 
 ATank* ATankAIController::GetControlledTank() const {
 	return Cast<ATank>(GetPawn());
