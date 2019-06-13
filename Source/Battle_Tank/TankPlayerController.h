@@ -38,6 +38,9 @@ private:
 	UPROPERTY(EditAnywhere)
 	float CrossHairYLocation = 0.33333;
 
-	
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
+
+	UPROPERTY(EditAnywhere)
+	float Reach = 1000000;
 
 };
