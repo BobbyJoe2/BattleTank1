@@ -3,10 +3,8 @@
 #include "TankPlayerController.h"
 #include "Gameframework/Actor.h"
 #include "Runtime/Engine/Classes/Components/InputComponent.h"
-#include "Runtime/Engine/Classes/PhysicsEngine/PhysicsHandleComponent.h"
-#include "Components/PrimitiveComponent.h"
-#include "DrawDebugHelpers.h"
 #include "Engine/World.h"
+#include "Tank.h"
 #include "Battle_Tank.h"
 
 
@@ -44,7 +42,7 @@ void ATankPlayerController::AimTowardsCrosshair() {
 	FVector HitLocation; //Out parameter
 
 	if (GetSightRayHitLocation(HitLocation)) { // has side effect is going to line trace
-		UE_LOG(LogTemp, Warning, TEXT("Hit location: %s"), *HitLocation.ToString());
+		GetControlledTank()->AimAt(HitLocation);
 
 		//TODO tell controlled tank to aim at this point
 	}
@@ -105,6 +103,4 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 
 
 	auto hitResult = HitResult;
-
-
 }
