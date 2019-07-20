@@ -14,6 +14,9 @@ class BATTLE_TANK_API ATank : public APawn
 public:
 	void AimAt(FVector HitLocation);
 
+protected:
+
+
 private:
 	// Sets default values for this pawn's properties
 	ATank();
